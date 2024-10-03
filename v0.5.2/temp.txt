@@ -1,0 +1,6 @@
+
+    .Events         = "%_exe_path_%"
+
+function/ det.MouseClick(Arg1)
+    exe/ & OS/AtmosphereOS/systeme/SYS/GUI/QUICK H/quicksys.cpc
+end/ function

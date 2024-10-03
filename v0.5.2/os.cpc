@@ -1,0 +1,29 @@
+
+sys/ /os:Atmos
+SYS/ /DEBUG = 0
+exe/ & %CPC.REP.KRNL%/CONFIG/ENV_GUI/env_gui.cpc
+
+CCP/ /set.level = 5 
+set/ SCR_RES = 800x600
+set/ SCR_BIT = 32
+set/ SCR_IMG = OS/Atmos/systeme/UI/MEDIA/img104.jpg
+
+CCP/ /SET.LEVEL = 4
+set/ OSName = Atmophère
+set/ famille = 1er génération
+set/ version = Alpha0.1
+set/ build = test
+set/ createur = mimil
+set/ entreprise = none
+
+gui/
+CCP/ /Optimization = 1
+exe/ & OS/Atmos/systeme/UI/UI.cpc
+exe/ & OS/Atmos/systeme/SYS/GUI/LOGIN/Login.cpc
+rem/exe/ & OS/Atmos/systeme/SYS/Gestion/shutdownLock.cpc
+
+
+
+
+
+
