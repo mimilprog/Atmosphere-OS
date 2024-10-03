@@ -1,0 +1,37 @@
+ccp/ SET.LEVEL = 4
+
+
+window/ GestionMachine
+    .title          = "Gestion machine"
+    .parameters     = "TYPE:4 BLURRY:5 SIZ:0"
+    .PX         = "680"
+    .PY         = "520"
+    .SX         = "100"
+    .SY         = "20"
+    .WindowColor    = "255,255,255" 
+    .TitleColor     = "255,255,255" 
+    .BackColor      = "200,200,200" 
+    .Opacity        = "200" 
+    @#GesMachine Create/ 
+end/ window
+Button/ shutdownLock
+    .Handle     = "%GesMachine%"
+    .name       = "ShutdownLock"
+    .parameters = "COL:1 BORD:1"
+    .text       = "Shutdown"
+    .PX         = "0"
+    .PY         = "0"
+    .SX         = "100"
+    .SY         = "20"
+    .TextColor  = "000,000,000"
+    .BackColor  = "238,238,238"
+    .Events     = "%_exe_path_%"
+    create/
+end/ Button
+
+function/ shutdownLock.Click()
+
+	rem/SYS/ /shutdown
+    exe/ /Win32 os/Atmos/systeme/Gestion/shut.bat
+
+end/ function

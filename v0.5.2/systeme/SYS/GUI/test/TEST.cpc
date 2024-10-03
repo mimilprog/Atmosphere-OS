@@ -1,0 +1,13 @@
+Window/ my_window_1 
+    .title          = "My first window!" 
+    .px             = "60" 
+    .py             = "40" 
+    .sx             = "420" 
+    .sy             = "263" 
+    .WindowColor    = "255,255,255" 
+    .TitleColor     = "255,255,255" 
+    .BackColor      = "200,200,200" 
+    .Opacity        = "200" 
+    Create/ 
+End/ Window 
+ 

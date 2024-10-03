@@ -1,0 +1,13 @@
+Window/ quick H
+    .title          = "quick H"
+    .parameters     = "TYPE:4 BLURRY:4 SIZ:0 MOVE:0 CLOSE:0 TASKBARHIDE:0 CTX:0 shadow:0"
+    .px             = "150" 
+    .py             = "60"
+    .sx             = "500" 
+    .sy             = "300" 
+    .WindowColor    = "048,048,048" 
+    .TitleColor     = "255,255,255" 
+    .BackColor      = "048,048,048" 
+    .Opacity        = "200" 
+    @#topbar Create/
+End/ Window

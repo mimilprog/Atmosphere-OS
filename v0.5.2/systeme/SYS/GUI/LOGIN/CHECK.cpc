@@ -1,0 +1,6 @@
+
+@#profil open/ OS/Atmos/USER/Utilisateur/fiche.txt /LIGNE:4
+set/ profilName = %profil%
+
+exe/ & OS/Atmos/systeme/SYS/GUI/Taskbar/taskbar.cpc
+exe/ & OS/Atmos/systeme/SYS/GUI/topbar/bar.cpc

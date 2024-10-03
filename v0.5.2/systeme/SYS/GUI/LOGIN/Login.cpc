@@ -1,0 +1,135 @@
+
+
+rem/formulaire de connexion
+Window/ Login 
+    .title          = "My first window!"
+    .parameters     = "TYPE:4 BLURRY:4 SIZ:0 MOVE:0 CLOSE:0 TASKBARHIDE:0 CTX:0"
+    .px             = "200" 
+    .py             = "40" 
+    .sx             = "400" 
+    .sy             = "500" 
+    .WindowColor    = "255,255,255" 
+    .TitleColor     = "255,255,255" 
+    .BackColor      = "200,200,200" 
+    .Opacity        = "200" 
+    @#LoginApp Create/ 
+End/ Window 
+
+
+picturebox/ mon_imagebox 
+    .Handle     = "%LoginApp%" 
+    .Parameters = "IMGAUTO:2" 
+    .PX         = "45" 
+    .PY         = "5" 
+    .SX         = "300" 
+    .SY         = "300" 
+    .Image      = "OS/Atmos/systeme/UI/GRAPH/SYS/UserIcon.png" 
+    create/ 
+end/ Picturebox
+
+Textblock/ Password
+    .name       = "bloque pour mot de passe"
+    .Handle     = "%LoginApp%"
+    .Text       = "Entrer le mot de passe"
+    .PX         = "50"
+    .PY         = "340"
+    .SX         = "300"
+    .SY         = "30"
+    create/
+end/ Textblock
+
+Textbox/ Password
+    .name       = "bloque pour mot de passe"
+    .Handle     = "%LoginApp%"
+    .Textbox    = ""
+    .Parameters = "MODIF:1"
+    .BackColor  = "255,255,255"
+    .TextColor  = "000,000,000"
+    .PX         = "50"
+    .PY         = "370"
+    .SX         = "300"
+    .SY         = "30"
+    .Opacity    = "200" 
+    @#ValeurPasword create/
+end/ Textbox
+
+
+
+Button/ Seconnecter
+    .Handle     = "%LoginApp%"
+    .name       = "Se connecter"
+    .Text       = "Se connecter"
+    .parameters = "COL:0 BORD:0"
+    .PX         = "150"
+    .PY         = "450"
+    .SX         = "100"
+    .SY         = "30"
+    .TextColor  = "000,000,000"
+    .Events     = "%_exe_path_%"
+    create/
+end/ Button
+
+rem/ bouton arrêt sur lock screen
+ccp/ SET.LEVEL = 4
+
+
+window/ GestionMachine
+    .title          = "Gestion machine"
+    .parameters     = "TYPE:4 BLURRY:5 SIZ:0"
+    .PX         = "680"
+    .PY         = "520"
+    .SX         = "100"
+    .SY         = "20"
+    .WindowColor    = "255,255,255" 
+    .TitleColor     = "255,255,255" 
+    .BackColor      = "200,200,200" 
+    .Opacity        = "200" 
+    @#GesMachine Create/ 
+end/ window
+Button/ shutdownLock
+    .Handle     = "%GesMachine%"
+    .name       = "ShutdownLock"
+    .parameters = "COL:1 BORD:1"
+    .text       = "Shutdown"
+    .PX         = "0"
+    .PY         = "0"
+    .SX         = "100"
+    .SY         = "20"
+    .TextColor  = "000,000,000"
+    .BackColor  = "238,238,238"
+    .Events     = "%_exe_path_%"
+    create/
+end/ Button
+
+Textbox/ /focus Password
+
+function/ shutdownLock.Click()
+
+	SYS/ /shutdown
+
+end/ function
+
+
+function/ Seconnecter.Click()
+
+Textbox/ /Modif:Password
+    @#ValeurPasword .text
+End/ Textbox
+set/ reponseMDP = %ValeurPasword%
+ccp/ SET.LEVEL = 4
+@#KeyPass open/ OS/Atmos/USER/Utilisateur/fiche.txt /LIGNE:4
+set/ key = %KeyPass%
+rem/ férification du mot de passe
+if/ "%ValeurPasword%" == "%KeyPass%" then: 
+    close/ Login
+    close/ GestionMachine
+    exe/ & OS/Atmos/systeme/SYS/GUI/LOGIN/CHECK.cpc
+    SYS/ /DEBUG = 2
+else: 
+    msgbox/ Mot de passe incorrect /titre:Login /erreur:4
+end/ if 
+
+
+end/ function
+
+

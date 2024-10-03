@@ -1,0 +1,13 @@
+Window/ démarreM 
+    .title          = "My first window!"
+    .parameters     = "TYPE:4 BLURRY:4 SIZ:0 MOVE:0 CLOSE:0 TASKBARHIDE:0 CTX:0"
+    .px             = "200" 
+    .py             = "40" 
+    .sx             = "400" 
+    .sy             = "500" 
+    .WindowColor    = "255,255,255" 
+    .TitleColor     = "255,255,255" 
+    .BackColor      = "200,200,200" 
+    .Opacity        = "200" 
+    @#startMenu Create/
+End/ Window 

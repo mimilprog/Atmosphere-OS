@@ -1,0 +1,60 @@
+Window/ stopwin
+    .title          = "My first window!"
+    .parameters     = "TYPE:4 BLURRY:4 SIZ:0 MOVE:0 CLOSE:0 TASKBARHIDE:0 CTX:0"
+    .px             = "250" 
+    .py             = "200" 
+    .sx             = "300" 
+    .sy             = "200" 
+    .WindowColor    = "255,255,255" 
+    .TitleColor     = "255,255,255" 
+    .BackColor      = "044,044,044" 
+    .Opacity        = "200" 
+    @#stopwin Create/
+End/ Window
+Textblock/ stoptxt
+    .handle         = "%stopwin%" 
+    .Parameters     = "IMGAUTO:0 COL:0" 
+    .PX             = "5" 
+    .PY             = "2" 
+    .Sx             = "200" 
+    .Sy             = "20" 
+    .TextColor      = "255,255,255" 
+    .text           = "Option d'alimantation" 
+    create/ 
+End/ Textblock
+button/ shut
+    .handle         = "%stopwin%"
+    .parameters     = "COL:1"
+    .PX             = "5"
+    .py             = "26"
+    .SX             = "190"
+    .SY             = "20"
+    .text           = "arret"
+    .BackColor      = "255,150,150"
+    .TextColor      = "255,255,255"
+    .events         = "%_exe_path_%"
+    create/
+end/ button
+
+button/ relancer
+    .handle         = "%stopwin%"
+    .parameters     = "COL:1"
+    .PX             = "5"
+    .py             = "51       "
+    .SX             = "190"
+    .SY             = "20"
+    .text           = "relancer Atmosphere"
+    .BackColor      = "255,150,150"
+    .TextColor      = "255,255,255"
+    .events         = "%_exe_path_%"
+    create/
+end/ button
+
+
+function/ shut.CLICK(Arg1)
+    sys/ /shutdown
+end/ function/
+
+function/ relancer.CLICK(Arg1)
+    start/
+end/ function/

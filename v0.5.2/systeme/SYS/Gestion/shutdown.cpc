@@ -1,0 +1,7 @@
+ccp/ SET.LEVEL = 4
+
+Function/ shutdownLock.Click() 
+    SYS/ /shutdown
+end/ Function 
+
+

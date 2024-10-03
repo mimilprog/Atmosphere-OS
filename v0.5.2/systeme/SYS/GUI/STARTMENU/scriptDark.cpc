@@ -1,0 +1,51 @@
+Window/ démarreM 
+    .title          = "My first window!"
+    .parameters     = "TYPE:4 BLURRY:4 SIZ:0 MOVE:0 CLOSE:0 TASKBARHIDE:0 CTX:0"
+    .px             = "200" 
+    .py             = "40" 
+    .sx             = "400" 
+    .sy             = "500" 
+    .WindowColor    = "255,255,255" 
+    .TitleColor     = "255,255,255" 
+    .BackColor      = "044,044,044" 
+    .Opacity        = "200" 
+    @#startMenu Create/
+End/ Window
+
+Picturebox/ apps
+.Handle     = "%startMenu%"
+.name       = "Application"
+.parameters = "COL:0 IMGAUTO:2 BORD:0"
+.Image      = "OS/Atmos/systeme/UI/GRAPH/SYS/start/appsW.png"
+.Py         = "0"
+.px         = "0"
+.sy         = "50"
+.sx         = "50"
+.Events     = "%_exe_path_%"
+create/
+end/ Picturebox/
+
+button/ stop
+.Handle     = "%startMenu%"
+.name       = "Application"
+.parameters = "COL:1 BORD:1"
+.text       = "Shutdown"
+.Py         = "0"
+.px         = "50"
+.sy         = "20"
+.sx         = "100"
+.WindowColor    = "255,255,255" 
+.TitleColor     = "255,255,255" 
+.BackColor      = "255,255,255" 
+.Events     = "%_exe_path_%"
+create/
+end/ button/
+
+function/ apps.Click()
+close/ démarreM
+exe/ & OS/Atmos/systeme/SYS/GUI/apps/fenetre.cpc
+end/ function/
+function/ stop.Click()
+close/ démarreM
+exe/ & OS/Atmos/systeme/SYS/GUI/stop/script.cpc
+end/ function/

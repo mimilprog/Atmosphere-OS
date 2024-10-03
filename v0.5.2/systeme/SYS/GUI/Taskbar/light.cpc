@@ -1,0 +1,31 @@
+window/ Taskbar
+    .name        = "taskbar"
+    .parameters  = "TYPE:4 BLURRY:4 SIZ:0 MOVE:0 CLOSE:0 TASKBARHIDE:0 CTX:0"
+    .WindowColor = "019,019,019"
+    .TitleColor  = "255,255,255"
+    .PX          = "100"
+    .PY          = "580"
+    .SX          = "600"
+    .SY          = "25"
+    .Opacity     = "220"
+    @#htaskbar create/
+end/ window
+
+Button/ demmarrer
+    .Handle     = "%htaskbar%"
+    .name       = "demmarrer"
+    .parameters = "COL:1 BORD:1"
+    .text       = "demarrer"
+    .PX         = "0"
+    .PY         = "0"
+    .SX         = "100"
+    .SY         = "20"
+    .TextColor  = "255,255,255"
+    .BackColor  = "034,034,034"
+    .Events     = "%_exe_path_%"
+    create/
+end/ Button
+
+function/ demmarrer.Click()
+exe/ & OS/Atmos/systeme/SYS/GUI/STARTMENU/scriptLight.cpc
+end/ function

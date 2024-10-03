@@ -1,0 +1,50 @@
+Window/ démarreM 
+    .title          = "My first window!"
+    .parameters     = "BLURRY:4 SIZ:0 CTX:0"
+    .px             = "200" 
+    .py             = "40" 
+    .sx             = "400" 
+    .sy             = "500" 
+    .WindowColor    = "255,255,255" 
+    .TitleColor     = "255,255,255" 
+    .BackColor      = "044,044,044" 
+    .Opacity        = "200" 
+    @#startMen Create/
+End/ Window
+
+
+button/ chrome
+    .handle         = "%startMen%"
+    .parameters     = "COL:1"
+    .PX             = "5"
+    .py             = "26"
+    .SX             = "190"
+    .SY             = "20"
+    .text           = "chrome setup"
+    .BackColor      = "255,251,000"
+    .TextColor      = "000,000,000"
+    .events         = "%_exe_path_%"
+    create/
+end/ button
+
+
+button/ Update
+    .handle         = "%startMen%"
+    .parameters     = "COL:1"
+    .PX             = "5"
+    .py             = "51"
+    .SX             = "190"
+    .SY             = "20"
+    .text           = "Atmosphère Update"
+    .BackColor      = "255,255,255"
+    .TextColor      = "000,000,000"
+    .events         = "%_exe_path_%"
+    create/
+end/ button
+function/ chrome.CLICK(Arg1)
+    msgbox/ pack innexistant
+end/ function/
+function/ Update.CLICK(Arg1)
+    close/ démarreM
+    exe/ &+ OS/Atmos/systeme/pack/update/instal.cpc
+end/ function/

@@ -1,0 +1,13 @@
+
+rem/script de la taskbar
+
+@#taskbarColor open/ OS/Atmos/USER/Utilisateur/fiche.txt /LIGNE:8
+set/ taskColor = %taskbarColor%
+if/ %taskColor% == "1" then:
+rem/thème sombre
+exe/ & OS/Atmos/systeme/SYS/GUI/Taskbar/dark.cpc
+else:
+rem/thème claire
+exe/ & OS/Atmos/systeme/SYS/GUI/Taskbar/light.cpc
+end/ if
+

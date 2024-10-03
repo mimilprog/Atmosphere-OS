@@ -1,0 +1,6 @@
+
+
+CCP/ /set.level = 5 
+set/ CPC_GUI.CURSOR_IMG = OS/Atmos/systeme/UI/GRAPH/CURSOR/Default.png
+set/ SCR_IMG = os/Atmos/systeme/UI/MEDIA/img20.jpg
+

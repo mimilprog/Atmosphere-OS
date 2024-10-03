@@ -1,0 +1,38 @@
+Window/ démarreM 
+    .title          = "Update"
+    .parameters     = "BLURRY:4 SIZ:0 CTX:0"
+    .px             = "500" 
+    .py             = "100" 
+    .sx             = "400" 
+    .sy             = "200" 
+    .WindowColor    = "255,255,255" 
+    .TitleColor     = "255,255,255" 
+    .BackColor      = "044,044,044" 
+    .Opacity        = "200" 
+    @#update Create/
+End/ Window
+
+Textblock/ chemin
+    .name       = "chemin"
+    .Handle     = "%update%"
+    .Text       = "Chemin vers le pack"
+    .PX         = "50"
+    .PY         = "25"
+    .SX         = "350"
+    .SY         = "30"
+    create/
+end/ Textblock
+
+button/ start
+    .handle         = "%update%"
+    .parameters     = "COL:1"
+    .PX             = "50"
+    .py             = "50"
+    .SX             = "150"
+    .SY             = "30"
+    .text           = "Installer"
+    .BackColor      = "043,255,000"
+    .TextColor      = "000,000,000"
+    .events         = "%_exe_path_%"
+    create/
+end/ button
