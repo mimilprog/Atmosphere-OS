@@ -1,0 +1,21 @@
+
+
+rem/ donnée de la gui
+exe/ & %CPC.REP.KRNL%/CONFIG/ENV_GUI/env_gui.cpc
+set/ SCR_IMG = %systemRoot%/back/b.png
+set/ SCR_BIT = 32
+set/ scr_res = 1024x768
+exe/ & %OSROOT%/machine/general/resolve.cpc
+
+rem/ ajout de la gui atmosphere
+exe/ & %systemRoot%/disk/gui/guiDB.cpc
+
+
+rem/ gui
+gui/
+
+
+rem/ execution des programme par default
+exe/ & %systemRoot%/disk/users/login.cpc
+
+

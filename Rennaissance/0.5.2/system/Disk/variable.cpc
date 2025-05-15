@@ -1,0 +1,14 @@
+
+rem/ definition lev visibilité a "OS" 
+rem/ /!\ ne pas modifier
+CCP/ /FIX.Niveau = 4
+
+rem/ variable d'amorçage system
+set/ systemRoot = os/atmos/system
+
+rem/ variable d'amorçage os
+set/ OSRoot = os/atmos
+
+
+
+

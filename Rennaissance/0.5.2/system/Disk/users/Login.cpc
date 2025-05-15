@@ -1,0 +1,58 @@
+
+
+rem/ fenêtre d'accueil système
+
+rem/ rechargement des variables d'affichage
+exe/ & %systemRoot%/disk/clearRes.cpc
+
+
+Window/ scrnl
+    .title          = "Cliquer pour vous connecter"
+    .parameters     = "CTX:0 TYPE:4 BORDER:0 SHADOW:0 MOVE:0 SIZ:0  TASKBAR:0 BLURRY:0"
+    .px             = "%set_quaOne_px%"
+    .py             = "%set_quaOne_py%" 
+    .sx             = "%set_quaOne_sx%" 
+    .sy             = "%set_quaOne_sy%" 
+    .WindowColor    = "200,200,200" 
+    .TitleColor     = "255,255,255" 
+    .BackColor      = "200,200,200" 
+    .Opacity        = "1"
+    @#scrnl Create/
+End/ Window
+
+rem/ boutton se connecter
+
+rem/ variable de positionnnement
+set/ btn_posX = /c((%set_quaOne_sx%-154)/2)
+set/ btn_posY = /c(%set_quaOne_sy%-19-36)
+
+
+
+
+Button/ seCo 
+    .Handle         = "%scrnl%"
+    .Parameters     = "COL:1 UPD:1"
+    .PX             = "%btn_posX%"
+    .PY             = "%btn_posY%"
+    .sx             = "154"
+    .sy             = "36"
+    .text           = "Se connecter"
+    .BackColor      = "255,255,255"
+    .TextColor      = "000,000,000"
+    .Opacity        = "100"
+    .event          = "%_EXE_PATH_%"
+    create/
+end/ Button
+ 
+
+
+function/ seCo.MouseClick()
+    exe/ & %systemRoot%/disk/users/Winlog.cpc
+    close/ scrnl
+end/ function
+
+
+
+
+
+

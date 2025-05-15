@@ -1,0 +1,21 @@
+
+
+
+rem/set/ /wkey SVER
+rem/txt/ %SVER%
+
+
+rem/if/ %% =="" then:
+rem/
+rem/else:
+rem/
+rem/end/ if
+
+rem/ progrmme d'amorçage de version
+
+
+rem/ lancement de la version classique
+exe/ & %systemRoot%/disk/classic.cpc
+
+
+

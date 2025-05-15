@@ -1,0 +1,42 @@
+
+
+rem/ definition lev visibilité a "OS" 
+rem/ /!\ ne pas modifier
+CCP/ /FIX.Niveau = 4
+
+set/ testco = 2
+
+
+rem/ création des quart
+rem/ * les quart sont de resolution de fenetre prédéfini
+
+
+rem/ quart 1 (100%x100%)
+set/ set_quaOne_sx = /c(%CPC.SCR.X%-2)
+set/ set_quaOne_sY = /c(%CPC.SCR.Y%-2)
+set/ set_quaOne_px = 1
+set/ set_quaOne_pY = 1
+
+
+
+rem/ quart 2 (100%x5%)
+
+rem/ set/ calc = /c((5 / 100) * %set_res_sY%)
+rem/ set/ set_quaTwo_sx = %set_res_sX%
+rem/ set/ set_quaTwo_sY = %calc%
+rem/ set/ set_quaTwo_px = 0
+rem/ rem/ si la barre est en haut
+rem/ set/ set_quaTwo_py_h = 0
+rem/ rem/ si la barre est en bas
+rem/ set/ calc = /c(%CPC.SCR.Y%-%set_quaTwo_sY%)
+rem/ set/ set_quaTwo_py_b = %calc%
+
+rem/ profil dédier profile de connection (seulement la position)
+set/ calc = /c((%CPC.SCR.Y%-476)/2)
+set/ set_dPpy = %calc%
+
+
+
+
+
+

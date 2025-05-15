@@ -1,0 +1,79 @@
+
+
+
+rem/ tool screen switcher
+
+Window/ switchRes
+    .title          = "switch screen"
+    .parameters     = "CTX:0 TYPE:0 BORDER:0 SHADOW:0"
+    .px             = "300"
+    .py             = "100" 
+    .sx             = "500" 
+    .sy             = "500" 
+    .WindowColor    = "200,200,200" 
+    .TitleColor     = "255,255,255" 
+    .BackColor      = "063,063,063" 
+    .Opacity        = "100"
+    @#GUIII Create/
+End/ Window
+
+Button/ ONE
+    .Handle         = "%GUIII%"  
+    .PX             = "80" 
+    .PY             = "80" 
+    .sx             = "100" 
+    .sy             = "30" 
+    .text           = "800x600"
+    .event          = "%_exe_path_%" 
+    create/ 
+end/ Button 
+Button/ TWO
+    .Handle         = "%GUIII%"  
+    .PX             = "80" 
+    .PY             = "180" 
+    .sx             = "100" 
+    .sy             = "30" 
+    .text           = "1024x768"
+    .event          = "%_exe_path_%" 
+    create/ 
+end/ Button 
+Button/ THREE
+    .Handle         = "%GUIII%"  
+    .PX             = "80" 
+    .PY             = "280" 
+    .sx             = "100" 
+    .sy             = "30" 
+    .text           = "1128x634"
+    .event          = "%_exe_path_%" 
+    create/ 
+end/ Button 
+
+function/ ONE.MouseClick()
+    set/ scr_res = 800x600
+    gui/
+    exe/ & %systemRoot%/disk/clearRes.cpc
+    /F:reloadSysWin()
+end/ function
+function/ TWO.MouseClick()
+    set/ scr_res = 1024x768
+    gui/
+    exe/ & %systemRoot%/disk/clearRes.cpc
+    /F:reloadSysWin()
+end/ function
+function/ THREE.MouseClick()
+    set/ scr_res = 1128x634
+    gui/
+    exe/ & %systemRoot%/disk/clearRes.cpc
+    /F:reloadSysWin()
+end/ function
+rem/ rechargement de fenêtre système
+
+
+
+
+
+
+
+
+
+

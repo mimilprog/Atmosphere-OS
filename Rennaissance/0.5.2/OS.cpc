@@ -1,0 +1,15 @@
+
+
+
+
+
+
+rem/ chargement des variables d'environnement système
+exe/ & OS/Atmos/system/Disk/variable.cpc
+exe/ & %OSROOT%/machine/general/Variable.cpc
+exe/ & %OSROOT%/system/Disk/config/kernelconfig.cpc
+
+rem/ demarrage dus système
+exe/ & %systemRoot%/version.cpc
+
+

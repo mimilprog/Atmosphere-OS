@@ -1,0 +1,28 @@
+
+
+
+set/ CPC_GUI.WINDOW.BT_CLOSE = %systemRoot%/Disk/GUI/window/close_btn.png
+set/ CPC_GUI.WINDOW.BT_CLOSE_SX = 20
+set/ CPC_GUI.WINDOW.BT_CLOSE_SY = 20
+
+
+set/ CPC_GUI.WINDOW.BT_SIZEUP = %systemRoot%/Disk/GUI/window/sizeup_btn.png
+set/ CPC_GUI.WINDOW.BT_SIZEUP_SX = 20
+set/ CPC_GUI.WINDOW.BT_SIZEUP_SY = 20
+
+
+set/ CPC_GUI.WINDOW.BT_SIZEDOWN = %systemRoot%/Disk/GUI/window/sizedown_btn.png
+set/ CPC_GUI.WINDOW.BT_SIZEDOWN_SX = 20
+set/ CPC_GUI.WINDOW.BT_SIZEDOWN_SY = 20
+
+
+set/ CPC_GUI.WINDOW.BT_REDUCT = %systemRoot%/Disk/GUI/window/reduct_btn.png
+set/ CPC_GUI.WINDOW.BT_REDUCT_SX = 20
+set/ CPC_GUI.WINDOW.BT_REDUCT_SY = 20
+set/ CPC_GUI.WINDOW.BT_REDUCT_PY = 15
+
+
+set/ CPC_GUI.CURSOR_IMG = %systemRoot%/Disk/GUI/cursorDEF.png
+
+
+

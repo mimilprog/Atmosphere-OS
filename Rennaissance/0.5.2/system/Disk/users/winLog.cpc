@@ -1,0 +1,125 @@
+
+
+CCP/ /FIX.Niveau = 4
+
+
+rem/ programme de connexion session interne
+
+rem/ teste d'ouverture
+txt/ ouverture reussi
+
+rem/ fermeture de la fenêtre de préconnexion et ouverture du formulaire de connexion
+rem/ fermeture du logins
+rem/ fenêtre de connexion
+
+rem/ toolbox du rechargement de résolution
+rem/ exe/ & %systemRoot%/disk/ResSwitch/multi.cpc
+
+
+rem/ fenêtre principale
+Window/ connect
+    .title          = "Se connecter"
+    .parameters     = "CTX:0 TYPE:1 BORDER:0 SHADOW:0 MOVE:1 SIZ:0  TASKBAR:0 BLURRY:0 REDUCT:0 CLOSE:0"
+    .px             = "26"
+    .py             = "%set_dPpy%" 
+    .sx             = "347" 
+    .sy             = "476" 
+    .WindowColor    = "200,200,200" 
+    .TitleColor     = "255,255,255" 
+    .BackColor      = "063,063,063" 
+    .Opacity        = "1"
+    @#login Create/
+End/ Window
+
+rem/ arrière plan de la fenêtre
+picturebox/ backlogin
+    .Handle     = "%login%" 
+    .Parameters = "IMGAUTO:2" 
+    .PX         = "0" 
+    .PY         = "0" 
+    .SX         = "347" 
+    .SY         = "476" 
+    .Image      = "%systemRoot%/Disk/GUI/account/back.png" 
+    create/ 
+end/ Picturebox
+
+rem/ image de profil
+picturebox/ profilicon
+    .Handle     = "%login%" 
+    .Parameters = "IMGAUTO:2" 
+    .PX         = "124" 
+    .PY         = "52" 
+    .SX         = "100" 
+    .SY         = "100" 
+    .Image      = "%systemRoot%/Disk/GUI/account/proflight.png" 
+    create/ 
+end/ Picturebox
+rem/ textbox pour entrer le mot de passe
+Textbox/ PassCase 
+    .handle         = "%login%" 
+    .Parameters     = "EDIT:1 MULTILINES:0" 
+    .PX             = "74"
+    .PY             = "250" 
+    .Sx             = "200" 
+    .Sy             = "20" 
+    .BackColor      = "255,255,255" 
+    .TextColor      = "000,000,000"
+    create/ 
+End/ Textbox
+
+rem/ textblock intituler "Mot de passe"
+Textblock/ PassCaT
+    .handle         = "%login%" 
+    .Parameters     = "COL:0 MULTILINES:0" 
+    .text           = "Mot de passe"
+    .PX             = "74" 
+    .PY             = "200" 
+    .Sx             = "200" 
+    .Sy             = "50"
+    .BackColor      = "000,000,000" 
+    .TextColor      = "255,255,255" 
+    create/ 
+End/ Textblock
+
+
+CCP/ /FIX.Niveau = 2
+rem/ boutton de connexion
+    Button/ conncetb
+        .Handle         = "%login%" 
+        .Parameters     = "IMGAUTO:0" 
+        .PX             = "124" 
+        .PY             = "320" 
+        .sx             = "100" 
+        .sy             = "30" 
+        .text           = "Se connecter"
+        .BackColor      = "255,255,255"
+        .TextColor      = "000,000,000"
+        .event          = "%_EXE_PATH_%"
+        create/ 
+    end/ Button 
+CCP/ /FIX.Niveau = 4
+rem/ permet de mettre automatiquement le focus sur la textbox
+Textbox/ /focus My_Textbox 
+rem/ login (temporaire)
+function/ reloadSysWin()
+    Window/ /Modif:connect
+        .py             = "%set_dPpy%"  
+        @#login create/
+    End/ Window
+end/ function
+declare/ reloadSysWin() : Niveau(4)
+
+rem/ login (temporaire)
+function/ conncetb.MouseClick()
+    msgbox/ hello
+end/ function
+
+
+
+
+
+
+
+
+
+

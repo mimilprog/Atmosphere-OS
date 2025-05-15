@@ -1,0 +1,10 @@
+
+
+
+rem/ fichier de configuration du noyau
+
+rem/ debug      0:desactivé     1:activé      2:activé+écriture
+sys/ /debug = 0
+
+
+

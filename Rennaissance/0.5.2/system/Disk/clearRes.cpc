@@ -1,0 +1,19 @@
+
+
+rem/ programme de rechargement des variables de dimension
+
+rem/ vidage des variables de dimension
+set/ /s set_quaOne_sx
+set/ /s set_quaOne_sY
+set/ /s set_quaOne_px
+set/ /s set_quaOne_pY
+set/ /s set_dPpy
+
+rem/ relancement du programme
+
+exe/ & %OSROOT%/machine/general/resolve.cpc
+
+
+
+
+
